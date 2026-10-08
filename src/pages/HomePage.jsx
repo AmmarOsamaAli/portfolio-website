@@ -19,11 +19,13 @@ export default function HomePage() {
         <div className="container">
           <Reveal>
             <header className="centered-heading">
-              <h2 id="services-heading">Easy to use. Carefully built.</h2>
+              <h2 id="services-heading">
+                Built around what people need to do.
+              </h2>
               <p>
-                Good software should make things easier. I focus on clear
-                interfaces, dependable functionality, and the details that make
-                an experience feel right.
+                Find information. Create an account. Complete a task. I build
+                the screens and the software behind them, so each step is clear
+                and the pieces work together.
               </p>
             </header>
           </Reveal>

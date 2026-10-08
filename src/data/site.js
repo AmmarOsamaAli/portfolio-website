@@ -2,9 +2,9 @@ export const site = {
   name: 'Ammar',
   identity: 'Software Engineer & Full-Stack Developer',
   location: 'Bahrain',
-  headline: 'I build websites and web applications.',
+  headline: 'Software that makes the next step easy.',
   description:
-    'I’m Ammar, a software developer. I bring clear thinking, careful attention to detail, and hands-on development from the first screen to the data behind it.',
+    'I’m Ammar. I build websites and web applications that help people find what they need and get things done, without getting in the way.',
   // TODO: Add verified contact/professional URLs. The repository owner is not
   // automatically assumed to be a public contact profile.
   email: 'ammarosama080@gmail.com',

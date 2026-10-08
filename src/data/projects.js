@@ -53,7 +53,7 @@ export const projects = [
     featured: true,
     status: 'live',
     summary:
-      'A freelance marketplace connecting clients and talent across the GCC, with interfaces for services and job opportunities.',
+      'Find freelance services and job opportunities across the GCC in one marketplace.',
     problem:
       'Help clients discover relevant services and freelancers find work in the Gulf region.',
     audience: 'Freelancers and clients across the GCC.',
@@ -81,7 +81,7 @@ export const projects = [
     featured: true,
     status: 'live',
     summary:
-      'A quiz application with a public interface for creating quizzes and playing live multiplayer games.',
+      'Create quizzes, invite others, and compete in live multiplayer games.',
     problem:
       'Give people a way to create quizzes, invite others, and play together.',
     audience: 'People creating quizzes and playing together.',
@@ -105,8 +105,7 @@ export const projects = [
     published: true,
     featured: true,
     status: 'live',
-    summary:
-      'An event-planning application for discovering public events and creating events in Bahrain.',
+    summary: 'Discover public events in Bahrain and create events of your own.',
     problem: 'Bring event discovery and event creation into one place.',
     audience: 'People discovering and organizing events in Bahrain.',
     role: 'Developer',

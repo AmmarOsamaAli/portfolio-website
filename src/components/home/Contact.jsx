@@ -195,8 +195,8 @@ export default function Contact() {
         </div>
         <div className="contact-content">
           <p>
-            Start a conversation. Share what you have in mind, and I’ll get back
-            to you.
+            What do you have in mind? Leave a message and an email address where
+            I can reach you.
           </p>
         </div>
         <ContactForm endpoint={endpoint} email={emailUrl(site.email)} />

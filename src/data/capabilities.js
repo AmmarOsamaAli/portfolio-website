@@ -1,17 +1,17 @@
 export const capabilities = [
   {
-    title: 'Clear interfaces',
+    title: 'Find things without the guesswork',
     description:
-      'Every screen should have a purpose. I make information easy to find and actions easy to follow, on phones and larger screens.',
+      'Clear layouts, readable content, and obvious actions help people know where to go next, whether they are on a phone or a computer.',
   },
   {
-    title: 'Connected functionality',
+    title: 'Get things done in one place',
     description:
-      'A polished interface needs working software behind it. I build across screens, application logic, and data so the whole experience fits together.',
+      'From signing in to saving information, I connect what happens on screen to the logic and data that make it work.',
   },
   {
-    title: 'Attention beyond the surface',
+    title: 'Know what happens next',
     description:
-      'I look beyond how a page looks: how it behaves, what happens when something goes wrong, and how easily the code can be improved.',
+      'Useful feedback matters. I pay attention to loading states, form errors, and confirmations, so people are not left wondering whether an action worked.',
   },
 ]

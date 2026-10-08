@@ -15,8 +15,8 @@ export default function ProjectsPage() {
       <header className="page-heading centered-heading">
         <h1>My projects</h1>
         <p>
-          See how I turn ideas into working software. Explore the applications,
-          understand my contribution, and try them for yourself.
+          Find freelance work, play a quiz, or discover an event. See what each
+          application does, how I contributed, and explore the live version.
         </p>
       </header>
       <WorkList projects={publicProjects(projects)} />
