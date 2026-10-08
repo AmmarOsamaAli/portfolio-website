@@ -5,10 +5,6 @@ export default function WorkList({ projects }) {
     return (
       <div className="work-empty">
         <p className="empty-title">Case studies are being prepared.</p>
-        <p>
-          Project details and work will be published here when they’re ready to
-          inspect.
-        </p>
       </div>
     )
   return (

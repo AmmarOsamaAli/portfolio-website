@@ -7,6 +7,7 @@ import './styles/reset.css'
 import './styles/global.css'
 import './styles/projects.css'
 import './styles/contact.css'
+import './styles/home.css'
 
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>

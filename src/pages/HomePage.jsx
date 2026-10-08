@@ -37,20 +37,15 @@ export default function HomePage() {
               </Link>
             </div>
           </div>
-          <dl className="hero-index">
-            <div>
-              <dt>Based in</dt>
-              <dd>{site.location}</dd>
-            </div>
-            <div>
-              <dt>Focus</dt>
-              <dd>Web products</dd>
-            </div>
-            <div>
-              <dt>Work</dt>
-              <dd>Frontend to backend</dd>
-            </div>
-          </dl>
+          <figure className="hero-visual">
+            <img
+              src="/illustrations/product-system.svg"
+              width="480"
+              height="420"
+              alt="A web product connects the user interface, application logic, and database."
+            />
+            <figcaption>The parts of a full-stack web product.</figcaption>
+          </figure>
         </div>
       </section>
       {site.credibility.length > 0 && (
@@ -64,14 +59,13 @@ export default function HomePage() {
         </section>
       )}
       <section
-        className="section container"
+        className="section container home-work"
         id="work"
         tabIndex={-1}
         aria-labelledby="work-heading"
       >
         <div className="work-heading">
           <div>
-            <p className="eyebrow">Work</p>
             <h2 id="work-heading">Selected Work</h2>
           </div>
           <Link className="text-link" to="/projects">
@@ -80,11 +74,24 @@ export default function HomePage() {
         </div>
         <WorkList projects={featured} />
       </section>
-      <section className="section container" id="capabilities" tabIndex={-1}>
+      <section
+        className="section container home-capabilities"
+        id="capabilities"
+        tabIndex={-1}
+      >
         <SectionHeader label="Capabilities" title="What I Build" />
         <div className="capability-grid">
           {capabilities.map((capability) => (
             <div className="capability" key={capability.title}>
+              <img
+                className="capability-visual"
+                src={capability.image}
+                alt=""
+                width="320"
+                height="180"
+                loading="lazy"
+                decoding="async"
+              />
               <h3>{capability.title}</h3>
               <p>{capability.description}</p>
               <ul>
@@ -136,7 +143,11 @@ export default function HomePage() {
           </ExternalLink>
         </section>
       )}
-      <section className="section container" id="process" tabIndex={-1}>
+      <section
+        className="section container home-process"
+        id="process"
+        tabIndex={-1}
+      >
         <SectionHeader label="Approach" title="How I Work" />
         <ol className="process-list">
           {process.map(([title, description], index) => (
@@ -144,13 +155,19 @@ export default function HomePage() {
               <span className="process-number" aria-hidden="true">
                 {String(index + 1).padStart(2, '0')}
               </span>
-              <h3>{title}</h3>
-              <p>{description}</p>
+              <div>
+                <h3>{title}</h3>
+                <p>{description}</p>
+              </div>
             </li>
           ))}
         </ol>
       </section>
-      <section className="section container" id="about" tabIndex={-1}>
+      <section
+        className="section container home-about"
+        id="about"
+        tabIndex={-1}
+      >
         <SectionHeader
           label="About"
           title="Useful software. Thoughtful engineering."

@@ -1,6 +1,7 @@
 export const capabilities = [
   {
     title: 'Business websites',
+    image: '/illustrations/website.svg',
     description:
       'Customer-facing websites with clear content, responsive layouts, and straightforward paths to an enquiry.',
     items: [
@@ -11,6 +12,7 @@ export const capabilities = [
   },
   {
     title: 'Full-stack applications',
+    image: '/illustrations/application.svg',
     description:
       'Software that connects the interface, application logic, and data around a useful workflow.',
     items: [
@@ -21,6 +23,7 @@ export const capabilities = [
   },
   {
     title: 'APIs & integrations',
+    image: '/illustrations/integrations.svg',
     description:
       'Connections between products and external services, designed around what the application needs.',
     items: [

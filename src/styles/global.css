@@ -225,13 +225,6 @@ p {
 .text-link:active {
   color: var(--color-secondary);
 }
-.hero-index {
-  padding-bottom: 0.25rem;
-}
-.hero-index div {
-  border-top: 1px solid var(--color-border);
-  padding-block: 0.875rem;
-}
 dt {
   font-size: 0.8125rem;
   color: var(--color-secondary);
@@ -482,12 +475,6 @@ dd {
   .hero h1 {
     max-width: 17ch;
   }
-  .hero-index {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    margin-top: 1.5rem;
-  }
   .section-header {
     grid-template-columns: 1fr 2.5fr;
     gap: 2rem;
@@ -519,15 +506,6 @@ dd {
   .hero-actions {
     gap: 1.25rem;
     margin-top: 2rem;
-  }
-  .hero-index {
-    gap: 0.875rem;
-  }
-  .hero-index dt {
-    font-size: 0.75rem;
-  }
-  .hero-index dd {
-    font-size: 0.8125rem;
   }
   .section-header {
     display: block;

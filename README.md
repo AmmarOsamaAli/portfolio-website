@@ -42,6 +42,8 @@ tests/          Content and behavior regression checks
 
 `DESIGN.md` describes the visual system and its mapping to CSS tokens.
 
+Homepage composition lives in `src/styles/home.css`. The small monochrome SVG diagrams in `public/illustrations/` explain capability areas; they are schematic illustrations, not project screenshots. Edit them directly without additional tooling or dependencies. The black/off-white palette remains in `tokens.css`.
+
 ## Content integrity and launch checklist
 
 The supplied brief provides positioning and possible project names, but no verified detailed project narratives, screenshots, employment, education, contact address, CV, or public profile links. Those values are intentionally absent. There are no invented clients, results or credentials.

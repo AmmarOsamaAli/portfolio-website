@@ -35,7 +35,7 @@ A professional body of work for business owners, recruiters, and technical hirin
 
 ## Visual language
 
-Left-aligned, broad typography with a narrow factual index beside the homepage thesis. The signature is the relationship between an explicit problem-solving headline and understated frontend-to-backend metadata. Work precedes explanations. Broad project rows carry imagery and contribution, never decorative cards. Rules separate ideas; whitespace establishes hierarchy. No gradients, invented screenshots, metrics, testimonials, stock photos, animation frameworks, or technology walls.
+Left-aligned typography paired with a monochrome diagram connecting interface, application logic, and data. The redundant Bahrain/focus/work metadata block has been removed at the user's request. Section labels sit with their headings, and process descriptions stay with their respective steps. Three small schematic illustrations explain capability groups; these are explanatory drawings, not project screenshots or claims of delivered work. Work precedes explanations; its empty state is compact until verified projects are supplied. Broad project rows carry real imagery and contribution. Rules separate ideas; whitespace establishes hierarchy. Preserve the original black, off-white, and neutral palette. No gradients, invented screenshots, metrics, testimonials, stock photos, animation frameworks, or technology walls.
 
 ## Tokens and ownership
 
@@ -55,7 +55,7 @@ Left-aligned, broad typography with a narrow factual index beside the homepage t
 
 Helvetica Neue, Helvetica, Arial, sans-serif throughout. Headline: 3–5.5rem, tighter tracking and restrained weight; section headings: 2–3.4rem; body: 1–1.125rem. Case study text has a 68ch reading measure. No external fonts.
 
-Content width: 1240px; gutters: 24px–64px; section spacing: 64px–104px. Controls have a 2px radius, no shadows. Responsive navigation changes below 900px; project rows and case metadata stack at 760px; narrow homepage arrangements at 650px. Layout has natural document scrolling.
+Content width: 1240px; gutters: 24px–64px; section spacing: 64px–104px, with a compact 40px work empty state. The homepage headline is capped at 4.65rem to balance the explanatory diagram. Controls have a 2px radius, no shadows. Responsive navigation changes below 900px; hero, process, about, project rows and case metadata stack at 760px; narrow capability illustrations stack above their copy at 480px. Layout has natural document scrolling. `src/styles/home.css` owns homepage composition and loads after shared styles.
 
 ## Interaction and content
 
