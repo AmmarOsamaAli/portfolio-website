@@ -42,7 +42,7 @@ export default function ProjectPreview({ project }) {
           <p className="stack-line">{project.stack.join(' / ')}</p>
         )}
         <Link className="text-link" to={`/projects/${project.slug}`}>
-          View Case Study <span aria-hidden="true">→</span>
+          View Case Study
         </Link>
       </div>
     </article>

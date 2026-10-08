@@ -12,7 +12,7 @@ export default function ProjectsPage() {
   )
   return (
     <div className="container projects-page">
-      <header className="page-heading">
+      <header className="page-heading centered-heading">
         <p className="eyebrow">Portfolio</p>
         <h1>Selected Work</h1>
         <p>
@@ -23,7 +23,7 @@ export default function ProjectsPage() {
       <WorkList projects={publicProjects(projects)} />
       <div className="page-end">
         <Link className="text-link" to="/#contact">
-          Discuss a project or role<span aria-hidden="true">→</span>
+          Discuss a project or role
         </Link>
       </div>
     </div>

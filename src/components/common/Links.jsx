@@ -7,7 +7,6 @@ export function ExternalLink({ href, children, className = '' }) {
   return (
     <a className={className} href={url}>
       {children}
-      <span aria-hidden="true"> ↗</span>
     </a>
   )
 }
@@ -32,7 +31,6 @@ export function ProfessionalLinks({ contact = false, includeEmail = false }) {
         .map(([label, url]) => (
           <a key={label} href={url}>
             {label}
-            <span aria-hidden="true"> ↗</span>
           </a>
         ))}
     </div>

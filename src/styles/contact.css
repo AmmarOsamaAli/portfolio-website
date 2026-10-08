@@ -1,62 +1,42 @@
 .contact-section {
-  background: var(--color-text);
-  color: var(--color-inverse);
   padding-block: var(--space-section);
-  scroll-margin-top: 0;
+  background: var(--color-background);
+  color: var(--color-text);
 }
 .contact-section > .container {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: 3rem;
-  align-items: end;
-}
-.contact-section .eyebrow {
-  color: var(--color-inverse-secondary);
+  max-width: 850px;
 }
 .contact-heading h2 {
-  font-size: clamp(2.75rem, 5.5vw, 4.8rem);
-  letter-spacing: -0.05em;
+  font-size: var(--font-section);
+  letter-spacing: -0.045em;
+}
+.contact-content {
+  text-align: center;
+  max-width: 60ch;
+  margin: -1rem auto 2.5rem;
 }
 .contact-content > p {
-  color: var(--color-inverse-secondary);
-  max-width: 42ch;
+  color: var(--color-secondary);
 }
 .contact-content > .button {
-  margin-top: 1.5rem;
+  margin-top: 1.25rem;
 }
 .contact-content .professional-links {
-  margin-top: 1rem;
+  justify-content: center;
+  margin-top: 0.75rem;
 }
 .contact-content .professional-links:empty {
   display: none;
-}
-.contact-content .contact-pending {
-  margin-top: 2rem;
-  font-size: 0.875rem;
-}
-.contact-section :focus-visible {
-  outline-color: var(--color-inverse);
-}
-.contact-section a:hover {
-  color: var(--color-inverse);
-  text-decoration-thickness: 2px;
 }
 .button-inverse {
   background: var(--color-inverse);
   border-color: var(--color-inverse);
   color: var(--color-text);
 }
-.contact-section .button-inverse:hover {
-  background: var(--color-accent);
-  border-color: var(--color-accent);
-}
 .contact-form {
-  grid-column: 1 / -1;
-  max-width: 800px;
   width: 100%;
-  border-top: 1px solid var(--color-secondary);
-  padding-top: 2.5rem;
-  margin-top: 1rem;
+  border-top: 1px solid var(--color-border);
+  padding-top: 2rem;
 }
 .form-pair {
   display: grid;
@@ -72,20 +52,20 @@
 .field textarea {
   display: block;
   width: 100%;
-  background: var(--color-text);
-  border: 1px solid var(--color-secondary);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-strong);
   border-radius: var(--radius-control);
-  color: var(--color-inverse);
-  padding: 0.75rem;
+  color: var(--color-text);
+  padding: 0.875rem;
   min-height: 48px;
 }
 .contact-textarea-resize-none {
   resize: none;
-  min-height: 170px;
+  min-height: 180px;
 }
 .field input:hover,
 .field textarea:hover {
-  border-color: var(--color-inverse-secondary);
+  border-color: var(--color-secondary);
 }
 .field input:disabled,
 .field textarea:disabled {
@@ -93,10 +73,10 @@
   cursor: wait;
 }
 .field [aria-invalid='true'] {
-  border-color: var(--color-error-inverse);
+  border-color: var(--color-error);
 }
 .field-error {
-  color: var(--color-error-inverse);
+  color: var(--color-error);
   font-size: 0.875rem;
   min-height: 1.5rem;
   margin-block: 0.375rem 0.75rem;
@@ -113,23 +93,30 @@
   align-items: start;
   gap: 1.5rem;
 }
+.contact-form .button-inverse {
+  background: var(--color-text);
+  border-color: var(--color-text);
+  color: var(--color-inverse);
+}
+.contact-form .button-inverse:hover {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
 .form-bottom button {
-  min-width: 180px;
+  min-width: 185px;
   flex-shrink: 0;
 }
 .form-status {
-  color: var(--color-inverse-secondary);
+  color: var(--color-secondary);
   font-size: 0.9375rem;
   min-height: 3rem;
 }
-@media (max-width: 760px) {
-  .contact-section > .container {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  .contact-content > p {
-    max-width: 52ch;
-  }
+.delivery-notice {
+  color: var(--color-secondary);
+  font-size: 0.8125rem;
+  margin-top: 0.75rem;
+}
+@media (max-width: 600px) {
   .form-pair {
     grid-template-columns: 1fr;
     gap: 0;
@@ -137,5 +124,8 @@
   .form-bottom {
     flex-direction: column;
     gap: 1rem;
+  }
+  .form-bottom button {
+    width: 100%;
   }
 }

@@ -4,7 +4,7 @@ import { emailUrl, safeWebUrl } from '../../utils/urlHelpers.js'
 import { validateContact } from '../../utils/contactHelpers.js'
 import { ProfessionalLinks } from '../common/Links.jsx'
 
-function ContactForm({ endpoint }) {
+function ContactForm({ endpoint, email }) {
   const [errors, setErrors] = useState({})
   const [status, setStatus] = useState('idle')
   const controllerRef = useRef(null)
@@ -22,6 +22,18 @@ function ContactForm({ endpoint }) {
     if (Object.keys(nextErrors).length) {
       setStatus('idle')
       form.elements.namedItem(Object.keys(nextErrors)[0]).focus()
+      return
+    }
+    if (!endpoint) {
+      if (!email) return
+      const subject = encodeURIComponent(
+        `Portfolio enquiry from ${values.name.trim()}`,
+      )
+      const body = encodeURIComponent(
+        `${values.message.trim()}\n\nFrom: ${values.name.trim()}\nReply to: ${values.email.trim()}`,
+      )
+      window.location.href = `${email}?subject=${subject}&body=${body}`
+      setStatus('email')
       return
     }
     // Quietly discard honeypot submissions; never send form content to logs.
@@ -50,6 +62,11 @@ function ContactForm({ endpoint }) {
         signal: controller.signal,
       })
       if (!response.ok) throw new Error('Contact request failed')
+      if (new URL(endpoint).hostname === 'formsubmit.co') {
+        const result = await response.json()
+        if (result.success !== true && result.success !== 'true')
+          throw new Error('Contact provider did not accept the message')
+      }
       setStatus('success')
       form.reset()
     } catch {
@@ -127,29 +144,45 @@ function ContactForm({ endpoint }) {
       <div className="form-bottom">
         <button
           className="button button-inverse"
-          disabled={status === 'submitting'}
+          disabled={status === 'submitting' || (!endpoint && !email)}
           type="submit"
         >
-          {status === 'submitting' ? 'Sending…' : 'Send Message'}
-          <span aria-hidden="true">↗</span>
+          {status === 'submitting'
+            ? 'Sending…'
+            : endpoint
+              ? 'Send Message'
+              : 'Open Email Draft'}
         </button>
         <div className="form-status" role="status" aria-live="polite">
           {status === 'success' &&
-            'Your message has been sent. Thank you for getting in touch.'}
+            'Your message has been submitted. Thank you for getting in touch.'}
+          {status === 'email' &&
+            'Your email app will open with your message. Send it there to contact me.'}
           {status === 'error' &&
             'Your message could not be sent. Please try again in a moment. Your message is still here.'}
         </div>
       </div>
+      {!endpoint && email && (
+        <p className="delivery-notice">
+          Opens your email app with a prepared message. You review and send it
+          there.
+        </p>
+      )}
+      {!endpoint && !email && (
+        <p className="delivery-notice">
+          Message delivery is being configured. Please check back shortly.
+        </p>
+      )}
     </form>
   )
 }
 
 export default function Contact() {
-  const endpoint = safeWebUrl(site.contactEndpoint)
-  const hasMethods =
-    emailUrl(site.email) ||
-    safeWebUrl(site.linkedinUrl) ||
-    safeWebUrl(site.whatsappUrl)
+  const endpoint =
+    safeWebUrl(site.contactEndpoint) ||
+    (site.contactProvider === 'formsubmit' && emailUrl(site.email)
+      ? `https://formsubmit.co/ajax/${encodeURIComponent(site.email)}`
+      : '')
   return (
     <section
       className="contact-section"
@@ -158,32 +191,21 @@ export default function Contact() {
       aria-labelledby="contact-heading"
     >
       <div className="container">
-        <div className="contact-heading">
+        <div className="contact-heading centered-heading">
           <p className="eyebrow">Contact</p>
-          <h2 id="contact-heading">
-            Let’s build
-            <br />
-            something useful.
-          </h2>
+          <h2 id="contact-heading">Let’s build something useful.</h2>
         </div>
         <div className="contact-content">
           <p>
             If you have a project, product, or software role where my experience
             could be useful, I’d be happy to hear about it.
           </p>
-          {emailUrl(site.email) && (
-            <a className="button button-inverse" href={emailUrl(site.email)}>
-              Contact Me<span aria-hidden="true">↗</span>
-            </a>
-          )}
-          <ProfessionalLinks contact />
-          {!hasMethods && !endpoint && (
-            <p className="contact-pending">
-              Contact details will be published here soon.
-            </p>
-          )}
+          <ProfessionalLinks />
+          <p className="contact-email">
+            <a href={emailUrl(site.email)}>{site.email}</a>
+          </p>
         </div>
-        {endpoint && <ContactForm endpoint={endpoint} />}
+        <ContactForm endpoint={endpoint} email={emailUrl(site.email)} />
       </div>
     </section>
   )

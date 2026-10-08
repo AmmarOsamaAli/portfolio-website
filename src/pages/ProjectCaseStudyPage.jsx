@@ -41,9 +41,9 @@ function CaseStudy({ project }) {
   return (
     <article className="container case-study">
       <Link className="text-link back-link" to="/projects">
-        <span aria-hidden="true">←</span> All work
+        All work
       </Link>
-      <header className="page-heading">
+      <header className="page-heading centered-heading">
         <p className="eyebrow">{project.projectType}</p>
         <h1>{project.title}</h1>
         {project.subtitle && (
@@ -158,10 +158,10 @@ function CaseStudy({ project }) {
       )}
       <div className="page-end">
         <Link className="text-link" to="/projects">
-          Explore more work<span aria-hidden="true">→</span>
+          Explore more work
         </Link>
         <Link className="text-link" to="/#contact">
-          Contact Me<span aria-hidden="true">→</span>
+          Contact Me
         </Link>
       </div>
     </article>

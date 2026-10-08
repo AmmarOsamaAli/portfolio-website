@@ -15,10 +15,10 @@ export default function NotFoundPage() {
       <p>The address may have changed, or this page hasn’t been published.</p>
       <div className="hero-actions">
         <Link className="button" to="/">
-          Back Home<span aria-hidden="true">→</span>
+          Back Home
         </Link>
         <Link className="text-link" to="/projects">
-          View Work<span aria-hidden="true">→</span>
+          View Work
         </Link>
       </div>
     </section>

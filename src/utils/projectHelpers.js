@@ -7,6 +7,7 @@ const projectTypes = [
   'Internship Project',
   'Concept Project',
   'University Project',
+  'Software Project', // Neutral fallback until verified solo/team context is supplied.
 ]
 
 export function publicProjects(projects) {
