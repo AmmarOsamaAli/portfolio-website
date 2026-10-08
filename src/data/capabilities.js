@@ -1,17 +1,17 @@
 export const capabilities = [
   {
-    title: 'Find things without the guesswork',
+    title: 'Understand what matters',
     description:
-      'Clear layouts, readable content, and obvious actions help people know where to go next, whether they are on a phone or a computer.',
+      'I clarify the goal, the people involved, and the constraints before choosing a solution. That keeps the work focused on what will make a difference.',
   },
   {
-    title: 'Get things done in one place',
+    title: 'Turn direction into working software',
     description:
-      'From signing in to saving information, I connect what happens on screen to the logic and data that make it work.',
+      'I connect the plan to the implementation, building across the interface, application logic, and data so the pieces support the same purpose.',
   },
   {
-    title: 'Know what happens next',
+    title: 'Follow through on the details',
     description:
-      'Useful feedback matters. I pay attention to loading states, form errors, and confirmations, so people are not left wondering whether an action worked.',
+      'I check the result against the original goal, address problems, and refine what needs work. Looking finished is only part of the job; it needs to work as intended.',
   },
 ]

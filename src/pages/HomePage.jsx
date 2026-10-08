@@ -19,13 +19,11 @@ export default function HomePage() {
         <div className="container">
           <Reveal>
             <header className="centered-heading">
-              <h2 id="services-heading">
-                Built around what people need to do.
-              </h2>
+              <h2 id="services-heading">Your goals shape what I build.</h2>
               <p>
-                Find information. Create an account. Complete a task. I build
-                the screens and the software behind them, so each step is clear
-                and the pieces work together.
+                I start with what you want to achieve, then work out how the
+                software can help you get there. Every decision should serve
+                that goal, from what gets built to how it works.
               </p>
             </header>
           </Reveal>
