@@ -6,7 +6,6 @@ import HomePage from '../pages/HomePage.jsx'
 import ProjectsPage from '../pages/ProjectsPage.jsx'
 import ProjectCaseStudyPage from '../pages/ProjectCaseStudyPage.jsx'
 import NotFoundPage from '../pages/NotFoundPage.jsx'
-import AboutPage from '../pages/AboutPage.jsx'
 
 export default function App() {
   return (
@@ -19,7 +18,6 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/projects" element={<ProjectsPage />} />
-          <Route path="/about" element={<AboutPage />} />
           <Route path="/projects/:slug" element={<ProjectCaseStudyPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>

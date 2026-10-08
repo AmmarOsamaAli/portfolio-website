@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react'
 import { site } from '../../data/site.js'
 import { emailUrl, safeWebUrl } from '../../utils/urlHelpers.js'
 import { validateContact } from '../../utils/contactHelpers.js'
-import { ProfessionalLinks } from '../common/Links.jsx'
 
 function ContactForm({ endpoint, email }) {
   const [errors, setErrors] = useState({})
@@ -192,17 +191,12 @@ export default function Contact() {
     >
       <div className="container">
         <div className="contact-heading centered-heading">
-          <p className="eyebrow">Contact</p>
-          <h2 id="contact-heading">Let’s build something useful.</h2>
+          <h2 id="contact-heading">Tell me what you need.</h2>
         </div>
         <div className="contact-content">
           <p>
-            If you have a project, product, or software role where my experience
-            could be useful, I’d be happy to hear about it.
-          </p>
-          <ProfessionalLinks />
-          <p className="contact-email">
-            <a href={emailUrl(site.email)}>{site.email}</a>
+            Tell me about your project or a role you are hiring for. Use the
+            form below to get in touch.
           </p>
         </div>
         <ContactForm endpoint={endpoint} email={emailUrl(site.email)} />

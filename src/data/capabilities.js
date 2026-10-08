@@ -1,55 +1,17 @@
 export const capabilities = [
   {
-    title: 'Business websites',
+    title: 'A website for your business',
     description:
-      'Customer-facing websites with clear content, responsive layouts, and straightforward paths to an enquiry.',
-    items: [
-      'Responsive customer experiences',
-      'Menus, catalogues & enquiry flows',
-      'Performance & SEO foundations',
-    ],
+      'Show customers what you offer and give them a clear way to contact you. I build websites that work on phones and computers.',
   },
   {
-    title: 'Full-stack applications',
+    title: 'An application for your idea',
     description:
-      'Software that connects the interface, application logic, and data around a useful workflow.',
-    items: [
-      'Frontend & backend implementation',
-      'Database-backed workflows',
-      'APIs & application interfaces',
-    ],
+      'Turn an idea into something people can use: an account, a booking, a quiz, or another task. I build the screens, save the data, and connect the parts.',
   },
   {
-    title: 'APIs & integrations',
+    title: 'Help with an existing product',
     description:
-      'Connections between products and external services, designed around what the application needs.',
-    items: [
-      'Third-party service integrations',
-      'Data exchange between systems',
-      'Connected product features',
-    ],
+      'Have a website or application that needs work? I can help add features, fix problems, and make it easier to use.',
   },
-]
-
-export const process = [
-  [
-    'Understand the problem',
-    'Clarify goals, users, constraints, and requirements.',
-  ],
-  [
-    'Plan the solution',
-    'Define workflows, scope, architecture, and priorities.',
-  ],
-  [
-    'Build deliberately',
-    'Implement in manageable stages and make informed technical decisions.',
-  ],
-  [
-    'Test and refine',
-    'Check usability, functionality, edge cases, responsiveness, and quality.',
-  ],
-  [
-    'Ship and improve',
-    'Deploy, gather feedback, maintain, and iterate where appropriate.',
-  ],
 ]

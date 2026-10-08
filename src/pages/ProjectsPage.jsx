@@ -13,11 +13,10 @@ export default function ProjectsPage() {
   return (
     <div className="container projects-page">
       <header className="page-heading centered-heading">
-        <p className="eyebrow">Portfolio</p>
-        <h1>Selected Work</h1>
+        <h1>My projects</h1>
         <p>
-          A closer look at the problems, product decisions, and engineering
-          behind the work.
+          Web applications I’ve worked on. Open a project to see what it does
+          and try the live version.
         </p>
       </header>
       <WorkList projects={publicProjects(projects)} />

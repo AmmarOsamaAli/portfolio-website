@@ -2,12 +2,9 @@ export const site = {
   name: 'Ammar',
   identity: 'Software Engineer & Full-Stack Developer',
   location: 'Bahrain',
-  headline: 'I build web products that solve real business and user problems.',
+  headline: 'I build websites and web applications.',
   description:
-    'Websites and full-stack applications, built around the people who use them. From the first screen to the data behind it.',
-  // A montage recorded from Ammar's three supplied live project interfaces.
-  heroVideo: '/media/portfolio-in-motion.webm',
-  heroPoster: '/media/portfolio-poster.webp',
+    'I’m Ammar, a software developer. I help businesses build online and turn ideas into working applications.',
   // TODO: Add verified contact/professional URLs. The repository owner is not
   // automatically assumed to be a public contact profile.
   email: 'ammarosama080@gmail.com',
