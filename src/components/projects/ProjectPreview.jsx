@@ -1,50 +1,59 @@
 import { Link } from 'react-router-dom'
 import ProjectMedia from './ProjectMedia.jsx'
+import { ExternalLink } from '../common/Links.jsx'
+import Reveal from '../common/Reveal.jsx'
+import { projectLinks } from '../../utils/projectHelpers.js'
 
 export default function ProjectPreview({ project }) {
+  const live = projectLinks(project).find(
+    (link) => link.label === 'View Live Application',
+  )
   return (
-    <article className="project-preview">
-      <ProjectMedia image={project.heroImage} title={project.title} />
-      <div className="project-preview-copy">
-        <p className="eyebrow">
-          {project.projectType}
-          {project.year && ` · ${project.year}`}
-        </p>
-        <h3>
-          <Link to={`/projects/${project.slug}`}>{project.title}</Link>
-        </h3>
-        {project.subtitle && (
-          <p className="project-subtitle">{project.subtitle}</p>
-        )}
-        <p>{project.summary}</p>
-        {project.problem && (
-          <p className="project-problem">{project.problem}</p>
-        )}
-        <p className="contribution">
-          <strong>
-            {project.projectType === 'Team Project'
-              ? 'My contribution'
-              : 'My role'}
-          </strong>
-          <br />
-          {project.projectType === 'Team Project'
-            ? project.contribution
-            : project.role}
-        </p>
-        {project.proofPoints?.length > 0 && (
-          <ul className="proof-points">
-            {project.proofPoints.slice(0, 3).map((point) => (
-              <li key={point}>{point}</li>
-            ))}
-          </ul>
-        )}
-        {project.stack?.length > 0 && (
-          <p className="stack-line">{project.stack.join(' / ')}</p>
-        )}
-        <Link className="text-link" to={`/projects/${project.slug}`}>
-          View Case Study
+    <Reveal>
+      <article className="project-preview">
+        <Link
+          className="project-image-link"
+          to={`/projects/${project.slug}`}
+          aria-label={`Explore ${project.title}`}
+        >
+          <ProjectMedia image={project.heroImage} title={project.title} />
+          <span className="project-image-action" aria-hidden="true">
+            Explore {project.title}
+          </span>
         </Link>
-      </div>
-    </article>
+        <div className="project-preview-copy">
+          <div>
+            <h2>
+              <Link to={`/projects/${project.slug}`}>{project.title}</Link>
+            </h2>
+            <p className="project-summary">{project.summary}</p>
+          </div>
+          <div className="project-preview-detail">
+            <p className="contribution">
+              <strong>
+                {project.projectType === 'Team Project'
+                  ? 'My contribution'
+                  : 'My role'}
+              </strong>
+              <span>
+                {project.projectType === 'Team Project'
+                  ? project.contribution
+                  : project.role}
+              </span>
+            </p>
+            <div className="project-actions">
+              <Link className="button" to={`/projects/${project.slug}`}>
+                Explore the work
+              </Link>
+              {live && (
+                <ExternalLink className="text-link" href={live.url}>
+                  Try it live
+                </ExternalLink>
+              )}
+            </div>
+          </div>
+        </div>
+      </article>
+    </Reveal>
   )
 }
