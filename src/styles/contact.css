@@ -1,0 +1,141 @@
+.contact-section {
+  background: var(--color-text);
+  color: var(--color-inverse);
+  padding-block: var(--space-section);
+  scroll-margin-top: 0;
+}
+.contact-section > .container {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 3rem;
+  align-items: end;
+}
+.contact-section .eyebrow {
+  color: var(--color-inverse-secondary);
+}
+.contact-heading h2 {
+  font-size: clamp(2.75rem, 5.5vw, 4.8rem);
+  letter-spacing: -0.05em;
+}
+.contact-content > p {
+  color: var(--color-inverse-secondary);
+  max-width: 42ch;
+}
+.contact-content > .button {
+  margin-top: 1.5rem;
+}
+.contact-content .professional-links {
+  margin-top: 1rem;
+}
+.contact-content .professional-links:empty {
+  display: none;
+}
+.contact-content .contact-pending {
+  margin-top: 2rem;
+  font-size: 0.875rem;
+}
+.contact-section :focus-visible {
+  outline-color: var(--color-inverse);
+}
+.contact-section a:hover {
+  color: var(--color-inverse);
+  text-decoration-thickness: 2px;
+}
+.button-inverse {
+  background: var(--color-inverse);
+  border-color: var(--color-inverse);
+  color: var(--color-text);
+}
+.contact-section .button-inverse:hover {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+.contact-form {
+  grid-column: 1 / -1;
+  max-width: 800px;
+  width: 100%;
+  border-top: 1px solid var(--color-secondary);
+  padding-top: 2.5rem;
+  margin-top: 1rem;
+}
+.form-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+.field label {
+  display: block;
+  font-size: 0.9375rem;
+  margin-bottom: 0.5rem;
+}
+.field input,
+.field textarea {
+  display: block;
+  width: 100%;
+  background: var(--color-text);
+  border: 1px solid var(--color-secondary);
+  border-radius: var(--radius-control);
+  color: var(--color-inverse);
+  padding: 0.75rem;
+  min-height: 48px;
+}
+.contact-textarea-resize-none {
+  resize: none;
+  min-height: 170px;
+}
+.field input:hover,
+.field textarea:hover {
+  border-color: var(--color-inverse-secondary);
+}
+.field input:disabled,
+.field textarea:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+.field [aria-invalid='true'] {
+  border-color: var(--color-error-inverse);
+}
+.field-error {
+  color: var(--color-error-inverse);
+  font-size: 0.875rem;
+  min-height: 1.5rem;
+  margin-block: 0.375rem 0.75rem;
+}
+.honeypot {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+.form-bottom {
+  display: flex;
+  align-items: start;
+  gap: 1.5rem;
+}
+.form-bottom button {
+  min-width: 180px;
+  flex-shrink: 0;
+}
+.form-status {
+  color: var(--color-inverse-secondary);
+  font-size: 0.9375rem;
+  min-height: 3rem;
+}
+@media (max-width: 760px) {
+  .contact-section > .container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .contact-content > p {
+    max-width: 52ch;
+  }
+  .form-pair {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .form-bottom {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

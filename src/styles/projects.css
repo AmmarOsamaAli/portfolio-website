@@ -1,0 +1,221 @@
+.work-empty {
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--color-border);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+.work-empty .empty-title {
+  font-size: 1.5rem;
+  letter-spacing: -0.025em;
+  color: var(--color-text);
+}
+.work-empty > p {
+  color: var(--color-secondary);
+  font-size: 1rem;
+  max-width: 42ch;
+}
+.projects-page .work-empty {
+  margin-bottom: 4rem;
+}
+.project-preview {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: start;
+  padding-block: 3rem;
+  border-top: 1px solid var(--color-border);
+}
+.project-preview:nth-child(even) {
+  grid-template-columns: 1fr 1.4fr;
+}
+.project-preview:nth-child(even) > :first-child {
+  order: 2;
+}
+.project-preview-copy {
+  padding-top: 0.25rem;
+}
+.project-preview-copy h3 {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+}
+.project-preview-copy h3 a {
+  text-decoration: none;
+  text-underline-offset: 6px;
+}
+.project-preview-copy h3 a:hover {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+.project-preview-copy > p:not(.eyebrow) {
+  margin-top: 1rem;
+  color: var(--color-secondary);
+  font-size: 1rem;
+}
+.project-preview-copy .contribution {
+  margin-top: 1.5rem;
+}
+.contribution strong {
+  color: var(--color-text);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.project-preview-copy .text-link {
+  margin-top: 1.25rem;
+}
+.proof-points {
+  font-size: 0.9375rem;
+  margin-block: 1.5rem;
+}
+.proof-points li {
+  margin-top: 0.5rem;
+}
+.project-preview-copy .stack-line {
+  font-size: 0.8125rem;
+}
+.project-media {
+  background: var(--color-surface);
+}
+.project-media img {
+  width: 100%;
+  border: 1px solid var(--color-border);
+}
+.project-media figcaption {
+  padding-block: 0.75rem;
+  font-size: 0.8125rem;
+  color: var(--color-secondary);
+  background: var(--color-background);
+}
+.media-placeholder {
+  aspect-ratio: 8 / 5;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  text-align: center;
+}
+.media-placeholder span {
+  font-size: 1.25rem;
+}
+.media-placeholder p {
+  font-size: 0.875rem;
+  color: var(--color-secondary);
+  margin-top: 0.5rem;
+}
+.back-link {
+  margin-top: 2rem;
+}
+.case-study .page-heading {
+  padding-top: 2.5rem;
+}
+.case-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+.case-study .page-heading .status-note {
+  font-size: 0.8125rem;
+  margin-top: 1rem;
+}
+.case-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) 1fr;
+  gap: clamp(3rem, 8vw, 8rem);
+  padding-block: 4rem;
+}
+.case-narrative {
+  max-width: var(--content-reading);
+}
+.narrative-section {
+  margin-bottom: 3rem;
+}
+.narrative-section h2 {
+  font-size: 1.75rem;
+  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
+}
+.narrative-section p,
+.narrative-section li {
+  color: var(--color-secondary);
+}
+.narrative-section li,
+.engineering-subsection li {
+  margin-block: 0.5rem;
+}
+.project-meta {
+  align-self: start;
+  position: sticky;
+  top: 2rem;
+}
+.project-meta dl > div {
+  border-top: 1px solid var(--color-border);
+  padding-block: 1rem;
+}
+.project-meta dd {
+  overflow-wrap: anywhere;
+}
+.project-meta .text-link {
+  display: flex;
+}
+.engineering-notes {
+  border-top: 1px solid var(--color-border-strong);
+  padding-top: 2rem;
+  margin-bottom: 3rem;
+}
+.engineering-notes > h2 {
+  font-size: 2.25rem;
+  margin-bottom: 2rem;
+}
+.engineering-subsection {
+  margin-top: 2rem;
+}
+.engineering-subsection h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+.engineering-subsection p,
+.engineering-subsection li {
+  color: var(--color-secondary);
+}
+.metric-note {
+  color: var(--color-secondary);
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+.project-gallery {
+  display: grid;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+@media (max-width: 760px) {
+  .project-preview,
+  .project-preview:nth-child(even) {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+  .project-preview:nth-child(even) > :first-child {
+    order: 0;
+  }
+  .case-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-top: 2rem;
+  }
+  .project-meta {
+    position: static;
+    grid-row: 1;
+  }
+  .project-meta dl {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 1.5rem;
+  }
+  .work-empty {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding-block: 2rem;
+  }
+}
