@@ -18,16 +18,6 @@
 .contact-content > p {
   color: var(--color-secondary);
 }
-.contact-content > .button {
-  margin-top: 1.25rem;
-}
-.contact-content .professional-links {
-  justify-content: center;
-  margin-top: 0.75rem;
-}
-.contact-content .professional-links:empty {
-  display: none;
-}
 .button-inverse {
   background: var(--color-inverse);
   border-color: var(--color-inverse);
