@@ -191,12 +191,12 @@ export default function Contact() {
     >
       <div className="container">
         <div className="contact-heading centered-heading">
-          <h2 id="contact-heading">Tell me what you need.</h2>
+          <h2 id="contact-heading">Let’s talk.</h2>
         </div>
         <div className="contact-content">
           <p>
-            Tell me about your project or a role you are hiring for. Use the
-            form below to get in touch.
+            Start a conversation. Share what you have in mind, and I’ll get back
+            to you.
           </p>
         </div>
         <ContactForm endpoint={endpoint} email={emailUrl(site.email)} />

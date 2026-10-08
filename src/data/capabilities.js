@@ -1,17 +1,17 @@
 export const capabilities = [
   {
-    title: 'A website for your business',
+    title: 'Clear interfaces',
     description:
-      'Show customers what you offer and give them a clear way to contact you. I build websites that work on phones and computers.',
+      'Every screen should have a purpose. I make information easy to find and actions easy to follow, on phones and larger screens.',
   },
   {
-    title: 'An application for your idea',
+    title: 'Connected functionality',
     description:
-      'Turn an idea into something people can use: an account, a booking, a quiz, or another task. I build the screens, save the data, and connect the parts.',
+      'A polished interface needs working software behind it. I build across screens, application logic, and data so the whole experience fits together.',
   },
   {
-    title: 'Help with an existing product',
+    title: 'Attention beyond the surface',
     description:
-      'Have a website or application that needs work? I can help add features, fix problems, and make it easier to use.',
+      'I look beyond how a page looks: how it behaves, what happens when something goes wrong, and how easily the code can be improved.',
   },
 ]

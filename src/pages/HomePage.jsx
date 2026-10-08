@@ -7,7 +7,7 @@ import Reveal from '../components/common/Reveal.jsx'
 export default function HomePage() {
   useDocumentMeta(
     `${site.name} | ${site.identity}`,
-    'Ammar builds websites and web applications for businesses and is available for software engineering opportunities.',
+    'Ammar builds websites and web applications with clear interfaces, thoughtful engineering, and attention to detail.',
   )
   return (
     <>
@@ -19,11 +19,11 @@ export default function HomePage() {
         <div className="container">
           <Reveal>
             <header className="centered-heading">
-              <h2 id="services-heading">Need a website or an application?</h2>
+              <h2 id="services-heading">Easy to use. Carefully built.</h2>
               <p>
-                I can build it with you. I work on what people see and use, and
-                the software that runs behind it. I am also interested in
-                software engineering roles where I can contribute to a team.
+                Good software should make things easier. I focus on clear
+                interfaces, dependable functionality, and the details that make
+                an experience feel right.
               </p>
             </header>
           </Reveal>
