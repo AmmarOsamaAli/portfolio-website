@@ -160,7 +160,7 @@ function CaseStudy({ project }) {
         <Link className="text-link" to="/projects">
           Explore more work
         </Link>
-        <Link className="text-link" to="/#contact">
+        <Link className="text-link" to="/contact">
           Contact Me
         </Link>
       </div>

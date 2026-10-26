@@ -43,7 +43,7 @@ export default function ProjectPreview({ project }) {
             </p>
             <div className="project-actions">
               <Link className="button" to={`/projects/${project.slug}`}>
-                Explore the work
+                View Case Study
               </Link>
               {live && (
                 <ExternalLink className="text-link" href={live.url}>

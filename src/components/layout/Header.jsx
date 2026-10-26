@@ -11,6 +11,9 @@ export default function Header() {
         <Link to="/" className="wordmark" aria-label={`${site.name} — home`}>
           {site.name}.
         </Link>
+        <Link className="text-link header-contact" to="/contact">
+          Contact Me
+        </Link>
       </div>
     </header>
   )

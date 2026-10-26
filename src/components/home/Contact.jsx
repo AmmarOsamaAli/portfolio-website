@@ -176,7 +176,7 @@ function ContactForm({ endpoint, email }) {
   )
 }
 
-export default function Contact() {
+export default function Contact({ headingLevel: Heading = 'h2' }) {
   const endpoint =
     safeWebUrl(site.contactEndpoint) ||
     (site.contactProvider === 'formsubmit' && emailUrl(site.email)
@@ -191,7 +191,7 @@ export default function Contact() {
     >
       <div className="container">
         <div className="contact-heading centered-heading">
-          <h2 id="contact-heading">Let’s talk.</h2>
+          <Heading id="contact-heading">Let’s talk.</Heading>
         </div>
         <div className="contact-content">
           <p>

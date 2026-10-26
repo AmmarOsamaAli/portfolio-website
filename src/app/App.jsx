@@ -6,6 +6,9 @@ import HomePage from '../pages/HomePage.jsx'
 import ProjectsPage from '../pages/ProjectsPage.jsx'
 import ProjectCaseStudyPage from '../pages/ProjectCaseStudyPage.jsx'
 import NotFoundPage from '../pages/NotFoundPage.jsx'
+import FreelancePage from '../pages/FreelancePage.jsx'
+import EmployersPage from '../pages/EmployersPage.jsx'
+import ContactPage from '../pages/ContactPage.jsx'
 
 export default function App() {
   return (
@@ -18,6 +21,9 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/freelance" element={<FreelancePage />} />
+          <Route path="/employers" element={<EmployersPage />} />
+          <Route path="/contact" element={<ContactPage />} />
           <Route path="/projects/:slug" element={<ProjectCaseStudyPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>

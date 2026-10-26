@@ -180,22 +180,6 @@ dd {
   padding-block: var(--space-section);
   scroll-margin-top: 2rem;
 }
-.capability-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 3rem;
-}
-.capability {
-  border-top: 1px solid var(--color-border-strong);
-  padding-top: 1.5rem;
-}
-.capability h3 {
-  margin-bottom: 1.25rem;
-}
-.capability p {
-  color: var(--color-secondary);
-  font-size: 1rem;
-}
 .site-footer {
   border-top: 1px solid var(--color-border);
 }
@@ -247,9 +231,6 @@ dd {
   .header-inner {
     gap: 1.5rem;
   }
-  .capability-grid {
-    gap: 1.5rem;
-  }
 }
 @media (max-width: 899px) {
   .header-inner {
@@ -274,13 +255,6 @@ dd {
   .hero-actions {
     gap: 1.25rem;
     margin-top: 2rem;
-  }
-  .capability-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  .capability {
-    padding-top: 1.25rem;
   }
   .footer-inner {
     flex-wrap: wrap;

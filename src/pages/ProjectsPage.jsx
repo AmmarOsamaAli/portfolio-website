@@ -21,7 +21,7 @@ export default function ProjectsPage() {
       </header>
       <WorkList projects={publicProjects(projects)} />
       <div className="page-end">
-        <Link className="text-link" to="/#contact">
+        <Link className="text-link" to="/contact">
           Get in touch
         </Link>
       </div>
