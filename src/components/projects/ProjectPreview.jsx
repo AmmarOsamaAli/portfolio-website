@@ -8,6 +8,11 @@ export default function ProjectPreview({ project }) {
   const live = projectLinks(project).find(
     (link) => link.label === 'View Live Application',
   )
+  const contribution =
+    project.contribution || (project.role !== 'Developer' ? project.role : '')
+  const proof = (
+    project.proofPoints?.length ? project.proofPoints : project.stack || []
+  ).slice(0, 4)
   return (
     <Reveal>
       <article className="project-preview">
@@ -26,28 +31,36 @@ export default function ProjectPreview({ project }) {
             <h2>
               <Link to={`/projects/${project.slug}`}>{project.title}</Link>
             </h2>
+            <p className="project-context">{project.projectType}</p>
             <p className="project-summary">{project.summary}</p>
+            {proof.length > 0 && (
+              <ul className="project-proof" aria-label="Project capabilities">
+                {proof.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            )}
           </div>
           <div className="project-preview-detail">
-            <p className="contribution">
-              <strong>
-                {project.projectType === 'Team Project'
-                  ? 'My contribution'
-                  : 'My role'}
-              </strong>
-              <span>
-                {project.projectType === 'Team Project'
-                  ? project.contribution
-                  : project.role}
-              </span>
-            </p>
+            {contribution && (
+              <p className="contribution">
+                <strong>My contribution</strong>
+                <span>{contribution}</span>
+              </p>
+            )}
+            {project.outcome && (
+              <p className="project-outcome">
+                <strong>Available to inspect</strong>
+                <span>{project.outcome}</span>
+              </p>
+            )}
             <div className="project-actions">
               <Link className="button" to={`/projects/${project.slug}`}>
                 View Case Study
               </Link>
               {live && (
                 <ExternalLink className="text-link" href={live.url}>
-                  Try it live
+                  Live App
                 </ExternalLink>
               )}
             </div>

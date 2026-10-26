@@ -94,6 +94,34 @@
   margin-top: 1rem;
   color: var(--color-secondary);
 }
+.project-context {
+  margin-top: 0.75rem;
+  font-size: 0.8125rem;
+  color: var(--color-secondary);
+}
+.project-proof {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  list-style: none;
+  padding: 0;
+  margin-top: 1.25rem;
+  font-size: 0.8125rem;
+  color: var(--color-text);
+}
+.project-outcome {
+  font-size: 0.9375rem;
+  color: var(--color-secondary);
+}
+.project-outcome strong {
+  display: block;
+  font-weight: 500;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+}
+.contribution + .project-outcome {
+  margin-top: 1.25rem;
+}
 .project-preview-detail {
   border-left: 1px solid var(--color-border);
   padding-left: 3rem;

@@ -8,15 +8,15 @@ import { Link } from 'react-router-dom'
 export default function ProjectsPage() {
   useDocumentMeta(
     `Work | ${site.name}`,
-    'Explore Ammar’s web applications, their purpose, and his contribution to the work.',
+    'Selected web applications showing the problems they solve, Ammar’s contribution, and the work available to inspect.',
   )
   return (
     <div className="container projects-page">
       <header className="page-heading centered-heading">
-        <h1>My projects</h1>
+        <h1>Selected Work</h1>
         <p>
-          Find freelance work, play a quiz, or discover an event. See what each
-          application does, how I contributed, and explore the live version.
+          A selection of web applications I’ve worked on, showing the problems
+          they solve, my contribution, and the engineering behind them.
         </p>
       </header>
       <WorkList projects={publicProjects(projects)} />
