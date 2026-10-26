@@ -66,16 +66,11 @@
 .work-highlights--single .highlight-copy {
   padding: 2rem;
 }
-.background-note {
-  margin-block: 1.75rem 2.5rem;
-  text-align: center;
-  color: var(--color-secondary);
-  font-size: 0.8125rem;
-}
 .audience-paths {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   border-block: 1px solid var(--color-border);
+  margin-top: 2.5rem;
 }
 .audience-path {
   text-decoration: none;

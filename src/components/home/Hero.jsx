@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { site } from '../../data/site.js'
+import { fellowship } from '../../data/profile.js'
 export default function Hero() {
   return (
     <section className="hero" aria-labelledby="hero-heading">
@@ -9,12 +10,15 @@ export default function Hero() {
         <p className="hero-description">{site.description}</p>
         <div className="hero-actions">
           <Link className="button button-inverse" to="/projects">
-            Explore My Work
+            View My Work
           </Link>
-          <Link className="button button-outline" to="/contact">
-            Contact Me
+          <Link className="button button-outline" to="/#work">
+            What I Build
           </Link>
         </div>
+        <p className="hero-credibility">
+          Software Engineering Graduate · {fellowship.organization}
+        </p>
       </div>
     </section>
   )

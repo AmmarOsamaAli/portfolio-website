@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import { site } from '../data/site.js'
-import { education, fellowship } from '../data/profile.js'
 import { useDocumentMeta } from '../hooks/useDocumentMeta.js'
 import Hero from '../components/home/Hero.jsx'
 import WorkHighlights from '../components/projects/WorkHighlights.jsx'
@@ -13,22 +12,20 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <section className="home-proof container" aria-labelledby="proof-title">
+      <section
+        className="home-proof container"
+        id="work"
+        tabIndex={-1}
+        aria-labelledby="proof-title"
+      >
         <header className="centered-heading">
           <h2 id="proof-title">See what I’ve built.</h2>
-          <p>
-            Start with a deployed application, then explore the rest of the
-            work.
-          </p>
+          <p>Deployed applications, with my role and contribution explained.</p>
         </header>
-        <WorkHighlights limit={1} />
-        <p className="background-note">
-          {education.title} · {fellowship.organization} software engineering
-          training
-        </p>
+        <WorkHighlights />
         <div className="audience-paths">
           <Link className="audience-path" to="/projects">
-            <h3>Explore My Work</h3>
+            <h3>View All Work</h3>
             <p>Applications, contributions, and live demos.</p>
           </Link>
           <Link className="audience-path" to="/freelance">
