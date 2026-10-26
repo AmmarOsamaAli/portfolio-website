@@ -15,7 +15,8 @@
   position: relative;
   background: #000;
   color: var(--color-inverse);
-  min-height: 560px;
+  min-height: 100vh;
+  min-height: 100svh;
   padding: 135px var(--content-gutter) 85px;
   display: grid;
   place-items: center;
