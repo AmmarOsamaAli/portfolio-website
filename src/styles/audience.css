@@ -48,6 +48,10 @@
 .highlight-copy .text-link {
   margin-top: 1rem;
 }
+.highlight-copy .highlight-context {
+  font-size: 0.8125rem;
+  line-height: 1.6;
+}
 .highlight-contribution {
   font-size: 0.875rem;
 }

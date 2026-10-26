@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { projects } from '../../data/projects.js'
-import { publicProjects } from '../../utils/projectHelpers.js'
+import { publicProjects, projectContext } from '../../utils/projectHelpers.js'
 import ProjectMedia from './ProjectMedia.jsx'
 import Reveal from '../common/Reveal.jsx'
 
@@ -25,18 +25,17 @@ export default function WorkHighlights({ limit = 2 }) {
               <h3>
                 <Link to={`/projects/${project.slug}`}>{project.title}</Link>
               </h3>
+              <p className="highlight-context">{projectContext(project)}</p>
               <p>{project.summary}</p>
               <p className="highlight-contribution">
-                <strong>
-                  {project.projectType === 'Team Project'
-                    ? 'My contribution'
-                    : 'My role'}
-                  :
-                </strong>{' '}
-                {project.projectType === 'Team Project'
-                  ? project.contribution
-                  : project.role}
+                <strong>My contribution :</strong>{' '}
+                {project.contribution || project.role}
               </p>
+              {project.proofEmphasis && (
+                <p className="highlight-contribution">
+                  <strong>Evidence:</strong> {project.proofEmphasis}
+                </p>
+              )}
               <Link className="text-link" to={`/projects/${project.slug}`}>
                 View case study
               </Link>

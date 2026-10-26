@@ -38,3 +38,15 @@ export function projectLinks(project) {
     .map((link) => ({ ...link, url: safeWebUrl(link.url) }))
     .filter((link) => link.url)
 }
+
+export function projectContext(project) {
+  return [
+    project.projectType,
+    project.projectType === 'Team Project' && project.teamSize
+      ? `${project.teamSize} Developers`
+      : '',
+    project.category,
+  ]
+    .filter(Boolean)
+    .join(' · ')
+}

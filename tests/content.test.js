@@ -1,6 +1,10 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { publicProjects, projectLinks } from '../src/utils/projectHelpers.js'
+import {
+  publicProjects,
+  projectLinks,
+  projectContext,
+} from '../src/utils/projectHelpers.js'
 import { safeWebUrl, safeAssetUrl, emailUrl } from '../src/utils/urlHelpers.js'
 import { validateContact } from '../src/utils/contactHelpers.js'
 
@@ -70,5 +74,24 @@ test('contact validation gives actionable field errors', () => {
       message: 'I would like to discuss a web application.',
     }),
     {},
+  )
+})
+
+test('project context distinguishes team ownership without inventing team sizes', () => {
+  assert.equal(
+    projectContext({
+      projectType: 'Team Project',
+      teamSize: 2,
+      category: 'Real-Time Full-Stack Application',
+    }),
+    'Team Project · 2 Developers · Real-Time Full-Stack Application',
+  )
+  assert.equal(projectContext({ projectType: 'Team Project' }), 'Team Project')
+  assert.equal(
+    projectContext({
+      projectType: 'Solo Project',
+      category: 'Full-Stack Web Application',
+    }),
+    'Solo Project · Full-Stack Web Application',
   )
 })

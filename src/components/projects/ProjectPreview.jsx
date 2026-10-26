@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import ProjectMedia from './ProjectMedia.jsx'
 import { ExternalLink } from '../common/Links.jsx'
 import Reveal from '../common/Reveal.jsx'
-import { projectLinks } from '../../utils/projectHelpers.js'
+import { projectLinks, projectContext } from '../../utils/projectHelpers.js'
 
 export default function ProjectPreview({ project }) {
   const live = projectLinks(project).find(
@@ -31,7 +31,7 @@ export default function ProjectPreview({ project }) {
             <h2>
               <Link to={`/projects/${project.slug}`}>{project.title}</Link>
             </h2>
-            <p className="project-context">{project.projectType}</p>
+            <p className="project-context">{projectContext(project)}</p>
             <p className="project-summary">{project.summary}</p>
             {proof.length > 0 && (
               <ul className="project-proof" aria-label="Project capabilities">
@@ -48,10 +48,12 @@ export default function ProjectPreview({ project }) {
                 <span>{contribution}</span>
               </p>
             )}
-            {project.outcome && (
+            {(project.proofEmphasis || project.outcome) && (
               <p className="project-outcome">
-                <strong>Available to inspect</strong>
-                <span>{project.outcome}</span>
+                <strong>
+                  {project.proofEmphasis ? 'Evidence' : 'Available to inspect'}
+                </strong>
+                <span>{project.proofEmphasis || project.outcome}</span>
               </p>
             )}
             <div className="project-actions">
