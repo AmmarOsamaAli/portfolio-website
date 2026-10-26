@@ -65,15 +65,35 @@ test('archived and unavailable projects never advertise a live application', () 
 test('contact validation gives actionable field errors', () => {
   assert.deepEqual(
     Object.keys(validateContact({ name: '', email: 'invalid', message: '' })),
-    ['name', 'email', 'message'],
+    ['name', 'email', 'topic', 'message'],
   )
   assert.deepEqual(
     validateContact({
       name: 'Visitor',
       email: 'visitor@example.com',
+      topic: 'Freelance project',
       message: 'I would like to discuss a web application.',
     }),
     {},
+  )
+})
+
+test('contact validation only accepts the three supported enquiry topics', () => {
+  const valid = {
+    name: 'Visitor',
+    email: 'visitor@example.com',
+    message: 'Let us discuss working together.',
+  }
+  for (const topic of [
+    'Freelance project',
+    'Software engineering opportunity',
+    'Collaboration / Other',
+  ]) {
+    assert.deepEqual(validateContact({ ...valid, topic }), {})
+  }
+  assert.equal(
+    typeof validateContact({ ...valid, topic: 'Unsupported topic' }).topic,
+    'string',
   )
 })
 

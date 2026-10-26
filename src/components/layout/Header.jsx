@@ -11,8 +11,11 @@ export default function Header() {
         <Link to="/" className="wordmark" aria-label={`${site.name} — home`}>
           {site.name}.
         </Link>
-        <Link className="text-link header-contact" to="/contact">
-          Contact Me
+        <Link
+          className="text-link header-contact"
+          to={pathname === '/contact' ? '/projects' : '/contact'}
+        >
+          {pathname === '/contact' ? 'View My Work' : 'Contact Me'}
         </Link>
       </div>
     </header>

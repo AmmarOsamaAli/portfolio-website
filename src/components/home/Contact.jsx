@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { site } from '../../data/site.js'
 import { emailUrl, safeWebUrl } from '../../utils/urlHelpers.js'
-import { validateContact } from '../../utils/contactHelpers.js'
+import { validateContact, contactTopics } from '../../utils/contactHelpers.js'
 
 function ContactForm({ endpoint, email }) {
   const [errors, setErrors] = useState({})
@@ -26,10 +26,10 @@ function ContactForm({ endpoint, email }) {
     if (!endpoint) {
       if (!email) return
       const subject = encodeURIComponent(
-        `Portfolio enquiry from ${values.name.trim()}`,
+        `${values.topic} — ${values.name.trim()}`,
       )
       const body = encodeURIComponent(
-        `${values.message.trim()}\n\nFrom: ${values.name.trim()}\nReply to: ${values.email.trim()}`,
+        `Topic: ${values.topic}\n\n${values.message.trim()}\n\nFrom: ${values.name.trim()}\nReply to: ${values.email.trim()}`,
       )
       window.location.href = `${email}?subject=${subject}&body=${body}`
       setStatus('email')
@@ -56,6 +56,7 @@ function ContactForm({ endpoint, email }) {
         body: JSON.stringify({
           name: values.name.trim(),
           email: values.email.trim(),
+          topic: values.topic,
           message: values.message.trim(),
         }),
         signal: controller.signal,
@@ -108,6 +109,30 @@ function ContactForm({ endpoint, email }) {
             </p>
           </div>
         ))}
+      </div>
+      <div className="field">
+        <label htmlFor="contact-topic">What would you like to discuss?</label>
+        <select
+          id="contact-topic"
+          name="topic"
+          defaultValue=""
+          required
+          disabled={status === 'submitting'}
+          aria-invalid={Boolean(errors.topic)}
+          aria-describedby={errors.topic ? 'topic-error' : undefined}
+        >
+          <option value="" disabled>
+            Choose a topic
+          </option>
+          {contactTopics.map((topic) => (
+            <option key={topic} value={topic}>
+              {topic}
+            </option>
+          ))}
+        </select>
+        <p className="field-error" id="topic-error">
+          {errors.topic || '\u00a0'}
+        </p>
       </div>
       <div className="field">
         <label htmlFor="contact-message">Message</label>
@@ -182,6 +207,11 @@ export default function Contact({ headingLevel: Heading = 'h2' }) {
     (site.contactProvider === 'formsubmit' && emailUrl(site.email)
       ? `https://formsubmit.co/ajax/${encodeURIComponent(site.email)}`
       : '')
+  const alternatives = [
+    [site.email, emailUrl(site.email)],
+    ['LinkedIn', safeWebUrl(site.linkedinUrl)],
+    ['WhatsApp', safeWebUrl(site.whatsappUrl)],
+  ].filter(([, url]) => url)
   return (
     <section
       className="contact-section"
@@ -191,15 +221,28 @@ export default function Contact({ headingLevel: Heading = 'h2' }) {
     >
       <div className="container">
         <div className="contact-heading centered-heading">
-          <Heading id="contact-heading">Let’s talk.</Heading>
+          <Heading id="contact-heading">Have something worth building?</Heading>
         </div>
         <div className="contact-content">
           <p>
-            What do you have in mind? Leave a message and an email address where
-            I can reach you.
+            Whether it’s a web project, software opportunity, or collaboration,
+            tell me a little about what you’re working on and I’ll get back to
+            you.
           </p>
         </div>
         <ContactForm endpoint={endpoint} email={emailUrl(site.email)} />
+        {alternatives.length > 0 && (
+          <div className="contact-alternatives">
+            <p>Prefer another way?</p>
+            <ul>
+              {alternatives.map(([label, url]) => (
+                <li key={url}>
+                  <a href={url}>{label}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
     </section>
   )
