@@ -19,22 +19,23 @@ export default function HomePage() {
         aria-labelledby="proof-title"
       >
         <header className="centered-heading">
-          <h2 id="proof-title">See what I’ve built.</h2>
+          <h2 id="proof-title">Selected Work</h2>
           <p>Deployed applications, with my role and contribution explained.</p>
         </header>
         <WorkHighlights />
+        <h2 className="audience-paths-heading">
+          Looking for something specific?
+        </h2>
         <div className="audience-paths">
-          <Link className="audience-path" to="/projects">
-            <h3>View All Work</h3>
-            <p>Applications, contributions, and live demos.</p>
-          </Link>
           <Link className="audience-path" to="/freelance">
             <h3>Freelance Services</h3>
-            <p>What I can build and how we can work together.</p>
+            <p>For businesses looking for websites or software.</p>
           </Link>
           <Link className="audience-path" to="/employers">
             <h3>For Employers</h3>
-            <p>My background and engineering approach.</p>
+            <p>
+              My experience, engineering approach, and professional background.
+            </p>
           </Link>
         </div>
       </section>

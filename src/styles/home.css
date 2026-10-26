@@ -43,11 +43,6 @@
   font-size: 0.875rem;
   margin-bottom: 1.5rem;
 }
-.hero-credibility {
-  color: var(--color-inverse-secondary);
-  font-size: 0.8125rem;
-  margin-top: 1.75rem;
-}
 .header-contact {
   margin-left: auto;
 }
@@ -60,11 +55,6 @@
 .hero-actions {
   justify-content: center;
   margin-top: 2rem;
-}
-.button-outline {
-  background: transparent;
-  border-color: var(--color-inverse-secondary);
-  color: var(--color-inverse);
 }
 .hero :focus-visible {
   outline-color: var(--color-inverse);

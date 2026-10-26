@@ -4,7 +4,7 @@ export const site = {
   headline:
     'I build useful web products, from business websites to full-stack applications.',
   description:
-    'I work across the frontend, backend, databases, and integrations, with a focus on solving real business and user problems.',
+    'I work across frontend, backend, databases and integrations to solve real business and user problems.',
   email: 'ammarosama080@gmail.com',
   cvUrl: '',
   githubUrl: '',
